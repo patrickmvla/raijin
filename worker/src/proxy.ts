@@ -1,6 +1,8 @@
-import { workerResponse } from "./config";
+import { Env, workerResponse } from "./config";
 
-export const Proxy = async (req: Request, ctx: ExecutionContext) => {
+
+
+export const Proxy = async (req: Request, env: Env, ctx: ExecutionContext) => {
   const url = new URL(req.url);
 
   const proxyUrl = url.searchParams.get("proxyUrl");
